@@ -7,7 +7,7 @@ import android.view.ViewGroup
 /**
  * Created by FCD on 23/05/2018.
  */
-fun ViewGroup.inflate(layoutResId: Int, attachToRoot: Boolean) : View {
+fun ViewGroup.inflate(layoutResId: Int, attachToRoot: Boolean = false) : View {
     val inflater = LayoutInflater.from(context)
     return inflater.inflate(layoutResId, this, attachToRoot);
 }
