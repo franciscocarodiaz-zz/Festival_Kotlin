@@ -12,7 +12,7 @@ import android.view.ViewGroup
 abstract class BaseFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(getLayoutResId(), container, false)
+        val view = container?.inflate(getLayoutResId(), false)
         return view
     }
 
