@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="fcd.com.festival2018.MainActivity">
+    tools:context="com.arequa.festival2018.MainActivity">
 
   <FrameLayout
-      android:id="@+id/fragment_container"
+      android:id="@+id/fragmentContainer"
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:layout_weight="1"/>

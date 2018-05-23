@@ -1,4 +1,4 @@
-package fcd.com.festival2018
+package com.arequa.festival2018
 
 import org.junit.Test
 

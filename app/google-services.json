@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "996858325493",
+    "firebase_url": "https://festival2018-a5a76.firebaseio.com",
+    "project_id": "festival2018-a5a76",
+    "storage_bucket": "festival2018-a5a76.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996858325493:android:b9e138ce93c434ba",
+        "android_client_info": {
+          "package_name": "com.arequa.festival2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996858325493-mescs1dshh19v35k1e8mh5gfetvvma5a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arequa.festival2018",
+            "certificate_hash": "2af7abdbffec3ce229346e2fd0e080d89f3e0be8"
+          }
+        },
+        {
+          "client_id": "996858325493-v0nbsdnkukjvo74og400c81qacp0osja.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "996858325493-v0nbsdnkukjvo74og400c81qacp0osja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0BHDQqRQYZdXseRwy0_nNsIbBxKtuphA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996858325493-v0nbsdnkukjvo74og400c81qacp0osja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

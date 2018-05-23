@@ -1,7 +1,7 @@
-package fcd.com.festival2018.events
+package com.arequa.festival2018.events
 
 import com.arequa.commons.BaseFragment
-import fcd.com.festival2018.R
+import com.arequa.festival2018.R
 
 /**
  * Created by FCD on 22/05/2018.
@@ -9,7 +9,7 @@ import fcd.com.festival2018.R
 class EventsFragment : BaseFragment() {
 
     override fun getLayoutResId(): Int {
-        return R.layout.fragments_events;
+        return R.layout.fragments_events
     }
 
 }
