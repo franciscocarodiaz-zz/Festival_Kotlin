@@ -1,4 +1,4 @@
-package fcd.com.festival2018
+package com.arequa.festival2018
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
