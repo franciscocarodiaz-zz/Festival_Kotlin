@@ -75,6 +75,8 @@
         android:textColor="@android:color/darker_gray"
         android:textSize="14sp"
         android:textStyle="bold"
+        android:drawableLeft="@drawable/ic_metacritic_rating"
+        android:drawablePadding="4dp"
         app:layout_constraintLeft_toLeftOf="@+id/labelSubtitle"
         app:layout_constraintTop_toBottomOf="@+id/labelSubtitle"
         tools:text="50"/>
@@ -84,6 +86,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
+        android:drawableLeft="@drawable/ic_steam_rating"
+        android:drawablePadding="4dp"
         android:textColor="@android:color/darker_gray"
         android:textSize="14sp"
         android:textStyle="bold"
