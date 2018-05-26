@@ -3,4 +3,6 @@
   <string name="action_menu_left_title">Left</string>
   <string name="action_menu_left_middle">Middle</string>
   <string name="action_menu_left_right">Right</string>
+  <string name="label_category">Category</string>
+  <string name="label_event_price">Price</string>
 </resources>
