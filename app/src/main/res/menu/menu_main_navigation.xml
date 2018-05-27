@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
   <item android:id="@+id/action_menu_left"
-        android:title="@string/action_menu_left_title"/>
+        android:title="@string/action_menu_left_title"
+      android:icon="@drawable/ic_top_rated"/>
   <item android:id="@+id/action_menu_middle"
-        android:title="@string/action_menu_left_middle"/>
+        android:title="@string/action_menu_left_middle"
+        android:icon="@drawable/ic_deals"/>
   <item android:id="@+id/action_menu_right"
-        android:title="@string/action_menu_left_right"/>
+        android:title="@string/action_menu_left_right"
+        android:icon="@drawable/ic_most_owned"/>
 </menu>

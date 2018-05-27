@@ -63,7 +63,7 @@
         app:layout_constraintGuide_percent="0.75"/>
 
     <TextView
-        android:id="@+id/labelScore1"
+        android:id="@+id/labelStat1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -71,6 +71,9 @@
         android:textColor="@android:color/white"
         android:textSize="14sp"
         android:textStyle="bold"
+
+        android:drawableLeft="@drawable/ic_steam_rating"
+        android:drawablePadding="4dp"
         app:layout_constraintHorizontal_bias="0.731"
         app:layout_constraintLeft_toLeftOf="@+id/labelSubtitle"
         app:layout_constraintRight_toRightOf="@+id/guideline2"
@@ -79,7 +82,7 @@
         tools:text="50"/>
 
     <TextView
-        android:id="@+id/labelScore2"
+        android:id="@+id/labelStat2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -88,11 +91,13 @@
         android:textColor="@android:color/white"
         android:textSize="14sp"
         android:textStyle="bold"
+        android:drawableLeft="@drawable/ic_owners"
+        android:drawablePadding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toRightOf="@+id/labelScore1"
+        app:layout_constraintLeft_toRightOf="@+id/labelStat1"
         app:layout_constraintRight_toRightOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/labelScore1"
+        app:layout_constraintTop_toTopOf="@+id/labelStat1"
         tools:text="50"/>
 
   </android.support.constraint.ConstraintLayout>
