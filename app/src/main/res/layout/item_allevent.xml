@@ -1,106 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="126dp"
-    app:cardBackgroundColor="@color/colorPrimary">
+    xmlns:tools="http://schemas.android.com/tools">
 
-  <ImageView
-      android:id="@+id/imageView"
+  <data>
+
+    <variable
+        name="item"
+        type="com.arequa.festival2018.AllEvent"/>
+  </data>
+
+  <android.support.v7.widget.CardView
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      app:srcCompat="@drawable/ic_thumb_demo"/>
+      android:layout_height="126dp"
+      app:cardBackgroundColor="@color/colorPrimary">
 
-  <android.support.constraint.ConstraintLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:padding="8dp">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/ic_thumb_demo"/>
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0"/>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
 
-    <TextView
-        android:id="@+id/labelTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:textColor="@android:color/white"
-        android:maxLines="2"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="_title of the event and subtitle of the event with only 2 lines"/>
+      <android.support.constraint.Guideline
+          android:id="@+id/guideline"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_percent="0"/>
 
-    <TextView
-        android:id="@+id/labelSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/label_category"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="@+id/labelTitle"
-        app:layout_constraintTop_toBottomOf="@+id/labelTitle"
-        tools:text="_title of the event"/>
+      <TextView
+          android:id="@+id/labelTitle"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="8dp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:layout_marginStart="8dp"
+          android:maxLines="2"
+          android:text="@{item.title}"
+          android:textColor="@android:color/white"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          app:layout_constraintEnd_toStartOf="@+id/guideline2"
+          app:layout_constraintStart_toStartOf="@+id/guideline"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:text="_title of the event and subtitle of the event with only 2 lines"/>
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75"/>
+      <TextView
+          android:id="@+id/labelPosition"
+          android:layout_width="84dp"
+          android:layout_height="36dp"
+          android:layout_marginEnd="8dp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:layout_marginStart="8dp"
+          android:maxLines="2"
+          android:text="@{String.valueOf(item.position)}"
+          android:gravity="center"
+          android:textColor="@android:color/white"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="@+id/guideline2"
+          app:layout_constraintTop_toTopOf="@+id/labelTitle"
+          tools:text="_99"/>
 
-    <TextView
-        android:id="@+id/labelStat1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/label_category"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        android:textStyle="bold"
+      <TextView
+          android:id="@+id/labelPrice"
+          android:layout_width="84dp"
+          android:layout_height="36dp"
+          android:layout_marginBottom="8dp"
+          android:layout_marginEnd="8dp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="8dp"
+          android:gravity="center"
+          android:maxLines="2"
+          android:textColor="@android:color/white"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toTopOf="@+id/labelStat2"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="@+id/guideline2"
+          app:layout_constraintTop_toBottomOf="@+id/labelPosition"
+          tools:text="_99"/>
 
-        android:drawableLeft="@drawable/ic_steam_rating"
-        android:drawablePadding="4dp"
-        app:layout_constraintHorizontal_bias="0.731"
-        app:layout_constraintLeft_toLeftOf="@+id/labelSubtitle"
-        app:layout_constraintRight_toRightOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/labelSubtitle"
-        tools:text="50"/>
+      <TextView
+          android:id="@+id/labelSubtitle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="24dp"
+          android:text="@{item.publisher}"
+          android:textColor="@android:color/white"
+          android:textSize="15sp"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toLeftOf="@+id/labelTitle"
+          app:layout_constraintTop_toBottomOf="@+id/labelTitle"
+          tools:text="_title of the event"/>
 
-    <TextView
-        android:id="@+id/labelStat2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:drawableLeft="@drawable/ic_owners"
-        android:drawablePadding="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toRightOf="@+id/labelStat1"
-        app:layout_constraintRight_toRightOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/labelStat1"
-        tools:text="50"/>
+      <android.support.constraint.Guideline
+          android:id="@+id/guideline2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_percent="0.75"/>
 
-  </android.support.constraint.ConstraintLayout>
+      <TextView
+          android:id="@+id/labelStat1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="4dp"
+          android:drawableLeft="@drawable/ic_steam_rating"
+          android:drawablePadding="4dp"
+          android:text="@{String.valueOf(item.steamRating)}"
+          android:textColor="@android:color/white"
+          android:textSize="14sp"
+          android:textStyle="bold"
+          app:layout_constraintHorizontal_bias="0.731"
+          app:layout_constraintLeft_toLeftOf="@+id/labelSubtitle"
+          app:layout_constraintRight_toRightOf="@+id/guideline2"
+          app:layout_constraintStart_toStartOf="@+id/guideline2"
+          app:layout_constraintTop_toBottomOf="@+id/labelSubtitle"
+          tools:text="50"/>
+
+      <TextView
+          android:id="@+id/labelStat2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="8dp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:drawableLeft="@drawable/ic_owners"
+          android:drawablePadding="4dp"
+          android:textColor="@android:color/white"
+          android:textSize="14sp"
+          android:textStyle="bold"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintLeft_toRightOf="@+id/labelStat1"
+          app:layout_constraintRight_toRightOf="@+id/guideline2"
+          app:layout_constraintTop_toTopOf="@+id/labelStat1"
+          android:text="@{String.valueOf(item.owners)}"
+          tools:text="50"/>
+
+    </android.support.constraint.ConstraintLayout>
 
 
-</android.support.v7.widget.CardView>
+  </android.support.v7.widget.CardView>
+</layout>
