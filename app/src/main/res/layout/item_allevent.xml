@@ -7,7 +7,7 @@
   <data>
 
     <variable
-        name="item"
+        name="allevent"
         type="com.arequa.festival2018.AllEvent"/>
   </data>
 
@@ -20,7 +20,8 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/ic_thumb_demo"/>
+        app:imgUrl="@{allevent.thumb}"
+        android:scaleType="centerCrop"/>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -43,7 +44,7 @@
           android:layout_marginRight="8dp"
           android:layout_marginStart="8dp"
           android:maxLines="2"
-          android:text="@{item.title}"
+          android:text="@{allevent.title}"
           android:textColor="@android:color/white"
           android:textSize="16sp"
           android:textStyle="bold"
@@ -61,7 +62,7 @@
           android:layout_marginRight="8dp"
           android:layout_marginStart="8dp"
           android:maxLines="2"
-          android:text="@{String.valueOf(item.position)}"
+          android:text="@{String.valueOf(allevent.position)}"
           android:gravity="center"
           android:textColor="@android:color/white"
           android:textSize="16sp"
@@ -97,7 +98,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="24dp"
-          android:text="@{item.publisher}"
+          android:text="@{allevent.publisher}"
           android:textColor="@android:color/white"
           android:textSize="15sp"
           android:textStyle="bold"
@@ -119,7 +120,7 @@
           android:layout_marginTop="4dp"
           android:drawableLeft="@drawable/ic_steam_rating"
           android:drawablePadding="4dp"
-          android:text="@{String.valueOf(item.steamRating)}"
+          android:text="@{String.valueOf(allevent.steamRating)}"
           android:textColor="@android:color/white"
           android:textSize="14sp"
           android:textStyle="bold"
@@ -147,7 +148,7 @@
           app:layout_constraintLeft_toRightOf="@+id/labelStat1"
           app:layout_constraintRight_toRightOf="@+id/guideline2"
           app:layout_constraintTop_toTopOf="@+id/labelStat1"
-          android:text="@{String.valueOf(item.owners)}"
+          android:text="@{String.valueOf(allevent.owners)}"
           tools:text="50"/>
 
     </android.support.constraint.ConstraintLayout>

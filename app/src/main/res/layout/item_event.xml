@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
   <data>
-
     <variable
-        name="item"
+        name="event"
         type="com.arequa.festival2018.Event"/>
   </data>
 
@@ -31,12 +30,12 @@
           android:layout_marginRight="8dp"
           android:layout_marginStart="8dp"
           android:layout_marginTop="8dp"
+          app:imgUrl="@{event.thumb}"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintDimensionRatio="1:0.5"
           app:layout_constraintEnd_toStartOf="@+id/guideline"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          app:imgUrl="@{item.thumb}"/>
+          app:layout_constraintTop_toTopOf="parent"/>
 
       <android.support.constraint.Guideline
           android:id="@+id/guideline"
@@ -54,9 +53,9 @@
           android:layout_marginRight="8dp"
           android:layout_marginStart="8dp"
           android:maxLines="2"
+          android:text="@{event.title}"
           android:textSize="16sp"
           android:textStyle="bold"
-          android:text="@{item.title}"
           app:layout_constraintEnd_toStartOf="@+id/guideline2"
           app:layout_constraintStart_toStartOf="@+id/guideline"
           app:layout_constraintTop_toTopOf="parent"
@@ -83,7 +82,7 @@
           android:layout_marginTop="8dp"
           android:drawableLeft="@drawable/ic_metacritic_rating"
           android:drawablePadding="4dp"
-          android:text="@{String.valueOf(item.metacriticScore)}"
+          android:text="@{String.valueOf(event.metacriticScore)}"
           android:textColor="@android:color/darker_gray"
           android:textSize="14sp"
           android:textStyle="bold"
@@ -95,10 +94,10 @@
           android:id="@+id/labelScore2"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="@{String.valueOf(item.steamRating)}"
           android:layout_marginLeft="8dp"
           android:drawableLeft="@drawable/ic_steam_rating"
           android:drawablePadding="4dp"
+          android:text="@{String.valueOf(event.steamRating)}"
           android:textColor="@android:color/darker_gray"
           android:textSize="14sp"
           android:textStyle="bold"
@@ -139,14 +138,14 @@
           android:layout_marginLeft="0dp"
           android:layout_marginRight="0dp"
           android:layout_marginTop="4dp"
-          android:text="@{item.salePriceFormatted}"
-          tools:text="_50"
+          android:text="@{event.salePriceFormatted}"
           android:textSize="14sp"
           android:textStyle="bold"
           app:layout_constraintHorizontal_bias="0.5"
           app:layout_constraintLeft_toLeftOf="@+id/labelPrice"
           app:layout_constraintRight_toRightOf="@+id/labelPrice"
-          app:layout_constraintTop_toTopOf="@+id/guideline3"/>
+          app:layout_constraintTop_toTopOf="@+id/guideline3"
+          tools:text="_50"/>
     </android.support.constraint.ConstraintLayout>
 
 

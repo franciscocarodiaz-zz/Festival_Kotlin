@@ -15,19 +15,36 @@ import com.arequa.festival2018.R
 class AllEventsFragment : BaseListFragment() {
 
     override fun getAdapter(): RecyclerView.Adapter<*> {
-        return DataBindingRecyclerAdapter<AllEvent>(BR.item, R.layout.item_allevent)
+        return DataBindingRecyclerAdapter<AllEvent>(BR.allevent, R.layout.item_allevent)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (listAdapter as DataBindingRecyclerAdapter<AllEvent>).items.addAll(getDummyItems())
+        listAdapter.notifyDataSetChanged()
     }
 
     fun getDummyItems() : ArrayList<AllEvent>{
-        return arrayListOf(AllEvent("title",
+        val event = AllEvent("title 1",
                 144342352,
                 "Valve", 80, 9.90F, 1, "https://i.blogs" +
-                ".es/7b014b/coco-disney/450_1000.jpg"))
+                ".es/7b014b/coco-disney/450_1000.jpg");
+        val list = arrayListOf(event)
+        val event2 = event.copy()
+        event2.title = "title 2"
+        event2.thumb = "https://okdiario.com/img/2017/07/13/mejores-peliculas-superheroes-3.jpg"
+        list.add(event2)
+
+        val event3 = event.copy()
+        event3.title = "title 3"
+        event3.thumb = "http://sm.ign.com/ign_latam/news/g/guardians-director-james-gunn-addresses-awards-sho/guardians-director-james-gunn-addresses-awards-sho_npme.jpg"
+        list.add(event3)
+
+        list.add(event)
+        list.add(event2)
+        list.add(event3)
+
+        return list
     }
 
     /*override fun getLayoutResId(): Int {
