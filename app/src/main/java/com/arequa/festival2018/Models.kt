@@ -26,8 +26,8 @@ data class Event(var title: String,
 
 data class AllEvent(var title: String,
                     var owners: Int,
+                    var publisher: String,
                     var steamRating: Int,
-                    var publisher: Int,
                     var price: Float,
                     var position: Int,
                     var thumb: String) {
