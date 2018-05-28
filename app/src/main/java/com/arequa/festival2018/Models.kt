@@ -8,7 +8,11 @@ data class Event(var title: String,
                  var normalPrice: Float,
                  var metacriticScore: Int,
                  var steamRating: Int,
-                 var thumb: String)
+                 var thumb: String) {
+    val FORMAT_PRICE = "$%.2f"
+    fun salePriceFormatted() = String.format(FORMAT_PRICE, salePrice)
+    fun normalPriceFormatted() = String.format(FORMAT_PRICE, normalPrice)
+}
 
 data class AllEvent(var title: String,
                     var owners: Int,
