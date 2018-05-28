@@ -1,1 +1,1 @@
-include ':app', ':commons', ':myapplication'
+include ':app', ':commons', ':myapplication', ':events.sdk'
