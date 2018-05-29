@@ -29,14 +29,15 @@ android {
   flavorDimensions "es"
 
   productFlavors {
-    mock{
+    mock {
       dimension "es"
     }
-    prod{
+    prod {
       dimension "es"
     }
   }
 
+  sourceSets { main { java.srcDirs = ['src/main/java', 'src/main/java/mock'] } }
 }
 
 dependencies {
