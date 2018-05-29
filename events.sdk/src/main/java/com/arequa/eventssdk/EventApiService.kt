@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 /**
  * Created by FCD on 28/05/2018.
  */
-class EventApiService {
+class EventApiService(val apiConfig: EventApiConfig = EventClientConfig()) {
 
     val apiClient: RetrofitEventApi
 
@@ -19,8 +19,9 @@ class EventApiService {
         val apiClientConfig = Retrofit.Builder()
                 .baseUrl(Routes.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .build()
 
-        apiClient = apiClientConfig.create(RetrofitEventApi::class.java)
+        apiConfig.setupConfig(apiClientConfig)
+
+        apiClient = apiClientConfig.build().create(RetrofitEventApi::class.java)
     }
 }
