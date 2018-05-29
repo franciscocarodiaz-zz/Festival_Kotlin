@@ -66,6 +66,8 @@ class RequestTest {
                     Assert.assertEquals(event.steamRating, this["score_rank"].asInt)
                     Assert.assertEquals(event.publisher, this["publisher"].asString)
                     Assert.assertEquals(event.owners, this["owners"].asInt)
+                    Assert.assertEquals(event.thumb, "http://cdn.akamai.steamstatic" +
+                            ".com/steam/apps/${this["appid"]}/capsule_184x69.jpg")
                 }
 
             }

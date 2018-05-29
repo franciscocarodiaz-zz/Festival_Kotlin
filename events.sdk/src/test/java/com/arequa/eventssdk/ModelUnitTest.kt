@@ -98,8 +98,7 @@ class ModelUnitTest {
         Assert.assertEquals(event.steamRating, 97)
         Assert.assertEquals(event.owners, 13364200)
         Assert.assertEquals(event.publisher, "Valve")
-        Assert.assertEquals(event.thumb, "http://cdn.akamai.steamstatic" +
-                ".com/steam/apps/10/capsule_184x69.jpg")
+        Assert.assertEquals(event.thumb, "http://cdn.akamai.steamstatic.com/steam/apps/10/capsule_184x69.jpg")
 
     }
 }
