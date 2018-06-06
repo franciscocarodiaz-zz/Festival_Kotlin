@@ -14,8 +14,10 @@ data class Event(var title: String,
                  var thumb: String)
 
 data class AllEvent(@SerializedName("name") var title: String,
-                    var publisher: String,
-                    @SerializedName("score_rank") var steamRating: Int,
                     var owners: Int,
+                    var steamRating: Int,
+                    var publisher: String,
                     var price: Float,
+                    var position: Int,
                     var thumb: String)
+

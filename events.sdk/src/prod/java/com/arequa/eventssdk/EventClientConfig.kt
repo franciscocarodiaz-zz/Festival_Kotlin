@@ -1,5 +1,7 @@
 package com.arequa.eventssdk
 
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
 /**
@@ -7,7 +9,9 @@ import retrofit2.Retrofit
  */
 class EventClientConfig: EventApiConfig {
     override fun setupConfig(builder: Retrofit.Builder) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val okHttpClient = OkHttpClient.Builder()
+                .addInterceptor(HttpLoggingInterceptor())
+                .build()
+        builder.client(okHttpClient)
     }
-
 }

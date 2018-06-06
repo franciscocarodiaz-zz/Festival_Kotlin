@@ -14,14 +14,14 @@ class ListAllEventDeserializer: JsonDeserializer<ArrayList<AllEvent>> {
     override fun deserialize(json: JsonElement, typeOfT: Type?, context: JsonDeserializationContext?): ArrayList<AllEvent> {
         val jsonAllEvent = json.asJsonObject
                 .entrySet()
-                .map { (key, json) ->
+                .map { (_, json) ->
                     json.asJsonObject
                 }
         val gson = GsonBuilder()
                 .registerTypeAdapter(AllEvent::class.java, AllEventDeserializer())
                 .create()
-        val listAllEvents: List<AllEvent> = jsonAllEvent.map { json ->
-            gson.fromJson(json, AllEvent::class.java)
+        val listAllEvents: List<AllEvent> = jsonAllEvent.map { jsonList ->
+            gson.fromJson(jsonList, AllEvent::class.java)
         }
 
         val arraylistAllEvent : ArrayList<AllEvent> = arrayListOf()

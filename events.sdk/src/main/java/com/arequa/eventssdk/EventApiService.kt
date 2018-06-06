@@ -5,6 +5,7 @@ import com.arequa.eventssdk.serializer.ListAllEventDeserializer
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 /**
@@ -22,10 +23,10 @@ class EventApiService(val apiConfig: EventApiConfig = EventClientConfig()) {
                 .registerTypeAdapter(tokenType, ListAllEventDeserializer())
                 .create()
 
-
         val apiClientConfig = Retrofit.Builder()
                 .baseUrl(Routes.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
 
         apiConfig.setupConfig(apiClientConfig)
 
