@@ -22,6 +22,7 @@
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:drawableTop="@drawable/ic_error"
       android:gravity="center"
       android:text="@string/label_error"/>
 
@@ -29,7 +30,7 @@
       android:id="@+id/btnRetry"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Retry"/>
+      android:text="@string/label_retry"/>
 
 </LinearLayout>
 

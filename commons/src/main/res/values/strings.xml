@@ -1,4 +1,8 @@
 <resources>
   <string name="app_name">commons</string>
-  <string name="label_error">Error</string>
+  <string name="label_error">Ocurrió un error al solicitar la información</string>
+  <string name="label_accept">Aceptar</string>
+
+  <string name="error_request">Opps! Try to reload the info again please</string>
+  <string name="label_retry">Retry</string>
 </resources>
