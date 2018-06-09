@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import com.arequa.festival2018.eventdetail.CustomEventsFragment
 import com.arequa.festival2018.eventdetail.DetailActivity
 import com.arequa.festival2018.eventdetail.DetailEventFragment
 import com.arequa.festival2018.eventdetail.EventDetailsFragment
@@ -20,8 +21,8 @@ class MainActivity : AppCompatActivity(), EventDetailsFragment.OnItemClickListen
     }
 
     val fragments: HashMap<Int, Fragment> = hashMapOf(
-            Pair(R.id.action_menu_left, EventDetailsFragment.newInstance(OPTION_GROUP_LEFT)),
-            Pair(R.id.action_menu_middle, EventDetailsFragment.newInstance(OPTION_GROUP_MIDDLE)),
+            Pair(R.id.action_menu_left, CustomEventsFragment.newInstance(OPTION_GROUP_LEFT)),
+            Pair(R.id.action_menu_middle, CustomEventsFragment.newInstance(OPTION_GROUP_MIDDLE)),
             Pair(R.id.action_menu_right, MapFragment())
     )
 

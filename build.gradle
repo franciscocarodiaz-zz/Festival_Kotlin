@@ -2,10 +2,12 @@
 
 buildscript {
   ext.kotlin_version = '1.2.30'
-  ext.constraint_version = '1.1.0'
-  ext.support_appcompat_version = '26.1.0'
+  ext.constraint_version = '1.1.1'
+  ext.support_appcompat_version = '27.1.1'
 
   repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
     google()
     jcenter()
   }
@@ -16,27 +18,13 @@ buildscript {
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
   }
-
-  subprojects {
-    project.configurations.all {
-      resolutionStrategy.eachDependency { details ->
-        if (details.requested.group == 'com.android.support'
-            && !details.requested.name.contains('multidex') ) {
-          details.useVersion "$support_appcompat_version"
-        }
-      }
-    }
-  }
-
 }
 
 allprojects {
   repositories {
-    google()
+    maven { url 'https://maven.google.com' }
     jcenter()
+    google()
   }
 }
 
-task clean(type: Delete) {
-  delete rootProject.buildDir
-}

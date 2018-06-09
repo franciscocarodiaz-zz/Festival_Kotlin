@@ -61,9 +61,9 @@ class EventDetailsFragment : Fragment() {
 
     var eventsId: Int = 0
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        eventsId = arguments.getInt("key_id")
+        eventsId = arguments?.getInt("key_id") ?: 0
         requestData()
         list.adapter = mAdapter
         btnRetry.setOnClickListener {
@@ -79,7 +79,8 @@ class EventDetailsFragment : Fragment() {
     }
 
     private fun requestData() {
-        EventsRepo.requestEventDetails(context, eventsId,
+        context?.let {
+            EventsRepo.requestEventDetails(it, eventsId,
                 { characters ->
                     view?.let {
                         progressBar.visibility = View.INVISIBLE
@@ -95,6 +96,7 @@ class EventDetailsFragment : Fragment() {
                     }
 
                 })
+        }
     }
 
 }

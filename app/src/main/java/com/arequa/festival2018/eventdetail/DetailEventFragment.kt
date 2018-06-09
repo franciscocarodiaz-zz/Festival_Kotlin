@@ -32,10 +32,10 @@ class DetailEventFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_detail_events, container, false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val id = arguments.getString("key_id")
+        val id = arguments!!.getString("key_id")
         val eventDetail = EventsRepo.findCharacterById(id)
 
         eventDetail?.let {
@@ -49,13 +49,13 @@ class DetailEventFragment : Fragment() {
                 labelSpouse.text = spouse
 
                 val overlayColor = EventCategory.getOverlayColor(eventDetail.category.name)
-                imgOverlay.background = ContextCompat.getDrawable(context, overlayColor)
+                imgOverlay.background = context?.let { it1 -> ContextCompat.getDrawable(it1, overlayColor) }
 
                 val baseColor = EventCategory.getBaseColor(eventDetail.category.name)
-                btnHouse.backgroundTintList = ContextCompat.getColorStateList(context, baseColor)
+                btnHouse.backgroundTintList = context?.let { it1 -> ContextCompat.getColorStateList(it1, baseColor) }
 
                 val idDrawable = EventCategory.getIcon(eventDetail.category.name)
-                val drawable = ContextCompat.getDrawable(context, idDrawable)
+                val drawable = context?.let { it1 -> ContextCompat.getDrawable(it1, idDrawable) }
                 btnHouse.setImageDrawable(drawable)
 
                 Picasso.get()

@@ -9,20 +9,58 @@ import com.arequa.festival2018.BR
 import com.arequa.festival2018.EventCategory
 import com.arequa.festival2018.EventDetail
 import com.arequa.festival2018.R
+import kotlinx.android.synthetic.main.fragment_characters.*
 import java.util.*
 
 /**
  * Created by FCD on 22/05/2018.
  */
 class CustomEventsFragment : BaseListFragment() {
+
+    companion object {
+        fun newInstance(id: Int) : CustomEventsFragment {
+            val instance = CustomEventsFragment()
+
+            val args = Bundle()
+            args.putInt("key_id", id)
+            instance.arguments = args
+
+            return instance
+        }
+
+    }
+
     override fun getAdapter(): RecyclerView.Adapter<*> {
         return DataBindingRecyclerAdapter<EventDetail>(BR.item, R.layout.item_event_detail)
     }
 
+    var eventsId: Int = 0
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (listAdapter as DataBindingRecyclerAdapter<EventDetail>).items.addAll(getDummyItems())
-        listAdapter.notifyDataSetChanged()
+        eventsId = arguments?.getInt("key_id") ?: 0
+        requestData()
+    }
+
+    private fun requestData() {
+        context?.let {
+            EventsRepo.requestEventDetails(it, eventsId,
+                    { events ->
+                        view?.let {
+                            progressBar.visibility = View.INVISIBLE
+                            list.visibility = View.VISIBLE
+                            (listAdapter as DataBindingRecyclerAdapter<EventDetail>).items.addAll(events)
+                            listAdapter.notifyDataSetChanged()
+                        }
+
+                    },
+                    {
+                        view?.let {
+                            progressBar.visibility = View.INVISIBLE
+                            layoutError.visibility = View.VISIBLE
+                        }
+
+                    })
+        }
     }
 
     fun getDummyItems() : ArrayList<EventDetail>{

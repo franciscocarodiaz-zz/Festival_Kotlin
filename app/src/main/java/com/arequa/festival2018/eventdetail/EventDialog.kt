@@ -33,7 +33,7 @@ class EventDialog : DialogFragment() {
             dialogView.labelName.text = name
             dialogView.labelRegion.text = region
             dialogView.labelWords.text = words
-            dialogView.layoutDialog.background = ContextCompat.getDrawable(context, EventCategory.getBaseColor(name))
+            dialogView.layoutDialog.background = context?.let { ContextCompat.getDrawable(it, EventCategory.getBaseColor(name)) }
 
             Picasso.get()
                     .load(img)
