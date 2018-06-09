@@ -20,10 +20,18 @@ class AllEventDeserializer : JsonDeserializer<AllEvent> {
         val gson = Gson()
 
         val allEvent = gson.fromJson(json, AllEvent::class.java)
-        val appId = json.asJsonObject["appid"]
-        val thumb = String.format(BASE_IMG_URL, appId)
 
+        val jsonItem = json.asJsonObject
+        val appId = jsonItem["appid"].asInt.toString()
+
+        val rawRating = jsonItem["score_rank"].asString
+        val steamRating = if(rawRating.isEmpty()) 0 else Integer.parseInt(rawRating)
+        allEvent.steamRating = steamRating
+
+        val thumb = String.format(BASE_IMG_URL, appId)
         allEvent.thumb = thumb
+
+        allEvent.price = allEvent.price / 100
 
         return allEvent
     }
