@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.fragment_list.view.*
 /**
  * Created by FCD on 23/05/2018.
  */
-abstract class BaseListFragment : MockResponseInterceptor() {
+abstract class BaseListFragment : BaseFragment() {
 
     lateinit var listAdapter: RecyclerView.Adapter<*>
 

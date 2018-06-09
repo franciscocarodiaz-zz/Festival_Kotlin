@@ -26,12 +26,11 @@ data class Event(var title: String,
 
 data class AllEvent(var title: String,
                     var owners: Int,
-                    var publisher: String,
                     var steamRating: Int,
+                    var publisher: String,
                     var price: Float,
                     var position: Int,
                     var thumb: String) {
-
     val priceFormatted : String
         get() = PriceFormatter.salePriceFormatted(price)
 
