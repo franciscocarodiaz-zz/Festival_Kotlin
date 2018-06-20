@@ -5,12 +5,20 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-  compileSdkVersion 27
+  signingConfigs {
+    release {
+      keyAlias 'arequa'
+      keyPassword 'Arequa.2014'
+      storeFile file('../keystores/Arequa.keystore')
+      storePassword 'Arequa.2014'
+    }
+  }
+  compileSdkVersion 26
   buildToolsVersion '27.0.3'
   defaultConfig {
     applicationId "fcd.com.festival2018"
     minSdkVersion 16
-    targetSdkVersion 27
+    targetSdkVersion 26
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -32,18 +40,17 @@ android {
     }
     prod {
       dimension "es"
-      signingConfig signingConfigs.release
+      //signingConfig signingConfigs.release
     }
   }
-
-  signingConfigs {
+  /*signingConfigs {
     release {
       storeFile file('../keystores/Arequa.keystore')
       storePassword 'Arequa.2014'
       keyAlias 'arequa'
       keyPassword 'Arequa.2014'
     }
-  }
+  }*/
 }
 
 dependencies {
@@ -56,7 +63,10 @@ dependencies {
   testImplementation 'junit:junit:4.12'
   androidTestImplementation 'com.android.support.test:runner:1.0.2'
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+  kapt 'com.android.databinding:compiler:3.1.2'
   implementation project(':commons')
+  implementation 'com.android.volley:volley:1.1.0'
+  implementation 'com.squareup.picasso:picasso:2.71828'
   debugImplementation project(':events.sdk')
   releaseImplementation project(':events.sdk')
   implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
