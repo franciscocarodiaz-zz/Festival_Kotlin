@@ -29,11 +29,19 @@ android {
 
   flavorDimensions "es"
   productFlavors {
+    prod {
+      dimension "es"
+    }
     mock {
       dimension "es"
     }
-    prod {
-      dimension "es"
+  }
+
+  variantFilter { variant ->
+    def names = variant.flavors*.name
+    if ((names.contains("mock") && variant.buildType.name == "release") ||
+        (names.contains("prod") && variant.buildType.name == "debug")){
+      variant.ignore = true
     }
   }
 

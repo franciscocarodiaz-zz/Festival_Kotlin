@@ -8,7 +8,7 @@
 
     <variable
         name="item"
-        type="com.arequa.festival2018.AllEvent"/>
+        type="com.riostudio.festival.AllEvent"/>
   </data>
 
   <android.support.v7.widget.CardView
