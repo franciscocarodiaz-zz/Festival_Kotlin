@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "654066653866",
+    "firebase_url": "https://festival-riostudio.firebaseio.com",
+    "project_id": "festival-riostudio",
+    "storage_bucket": "festival-riostudio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654066653866:android:290b36a916429f9f",
+        "android_client_info": {
+          "package_name": "com.riostudio.festival"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654066653866-6cp5h1fasqlm79qe60ji6479nu6b7ioq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.riostudio.festival",
+            "certificate_hash": "c9e926e0902f4d01635e1510ba776d82916497ae"
+          }
+        },
+        {
+          "client_id": "654066653866-jn9953nrnu9u4ksb9e3hq6ba846b4nni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVPwB2jAr7O8w5S2AskL2zpO75KlOeNlE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654066653866-jn9953nrnu9u4ksb9e3hq6ba846b4nni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
